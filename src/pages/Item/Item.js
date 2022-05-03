@@ -1,20 +1,34 @@
-import { Button } from "bootstrap";
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-const Item = ({ props }) => {
-  const { name, image } = props.item;
-  //_id, name, image, short description, price, quantity, supplier name
+const Item = ({ item }) => {
+  const navigate = useNavigate();
+  const {
+    _id,
+    name,
+    image,
+    short_description,
+    price,
+    quantity,
+    supplier_name,
+  } = item;
+
   return (
     <div>
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={image} />
         <Card.Body>
-          <Card.Title>{name}</Card.Title>
-          <Card.Text>
-            <h1>desh desh</h1>
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Card.Title>
+            id: {_id} {name}
+          </Card.Title>
+          <Card.Text>desh desh</Card.Text>
+          <Button
+            onClick={() => navigate(`/cardDetails/${_id}`)}
+            variant="primary"
+          >
+            Details
+          </Button>
         </Card.Body>
       </Card>
     </div>

@@ -1,9 +1,11 @@
 import React from "react";
+
 import Item from "../Item/Item";
 import useItems from "../UseItems/UseItems";
 
 const Items = () => {
   const [items] = useItems();
+
   return (
     <div>
       {items.map((item) => (
