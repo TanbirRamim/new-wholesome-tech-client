@@ -19,15 +19,21 @@ const Item = ({ item }) => {
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={image} />
         <Card.Body>
-          <Card.Title>
-            id: {_id} {name}
-          </Card.Title>
-          <Card.Text>desh desh</Card.Text>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>
+            {short_description}
+            <br />
+            price: {price}
+            <br />
+            quantity: {quantity}
+            <br />
+            supplier name: {supplier_name}
+          </Card.Text>
           <Button
             onClick={() => navigate(`/cardDetails/${_id}`)}
             variant="primary"
           >
-            Details
+            Update
           </Button>
         </Card.Body>
       </Card>

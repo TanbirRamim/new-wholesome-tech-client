@@ -7,7 +7,7 @@ const Items = () => {
   const [items] = useItems();
 
   return (
-    <div>
+    <div className="container">
       {items.map((item) => (
         <Item key={item._id} item={item}></Item>
       ))}
