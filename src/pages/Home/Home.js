@@ -2,6 +2,7 @@ import React from "react";
 import Item from "../Item/Item";
 import Items from "../Items/Items";
 import useItems from "../UseItems/UseItems";
+import Typewriter from "typewriter-effect";
 
 import Banner from "./banner.webp";
 
@@ -12,7 +13,33 @@ const Home = () => {
       <div className="m-5 d-flex align-items-center justify-content-evenly mx-auto">
         <div>
           <h1>Wholesome Tech</h1> <br />
-          <h3> your </h3>
+          <h1 className="mt-10">
+            <Typewriter
+              options={{
+                strings: [
+                  " Your ultimate tech solution",
+                  " your happiness is our success",
+                  " unlimited products",
+                  " quality ",
+                ],
+                autoStart: true,
+                loop: true,
+              }}
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString()
+                  .callFunction(() => {
+                    console.log("String typed out!");
+                  })
+                  .pauseFor(1000)
+                  .deleteAll()
+                  .callFunction(() => {
+                    console.log("All strings were deleted");
+                  })
+                  .start();
+              }}
+            />
+          </h1>
         </div>
         <div>
           <img className="img-fluid w-100% h-auto" src={Banner} alt="" />
