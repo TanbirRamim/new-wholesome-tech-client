@@ -19,8 +19,10 @@ const Home = () => {
                 strings: [
                   " Your ultimate tech solution",
                   " your happiness is our success",
-                  " unlimited products",
-                  " quality ",
+                  " unlimited worthful gadgets",
+                  " quality products in hand",
+                  " Trust is our thing",
+                  " believe in us",
                 ],
                 autoStart: true,
                 loop: true,
