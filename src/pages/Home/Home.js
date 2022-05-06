@@ -17,10 +17,10 @@ const Home = () => {
             <Typewriter
               options={{
                 strings: [
-                  " Your ultimate tech solution",
-                  " your happiness is our success",
-                  " unlimited worthful gadgets",
-                  " quality products in hand",
+                  " Your ultimate path",
+                  " lifetime service",
+                  " unlimited gadgets",
+                  " quality products ",
                   " Trust is our thing",
                   " believe in us",
                 ],
@@ -48,7 +48,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container ">
+      <div className=" row d-flex justify-content-center ">
         {items.slice(0, 6).map((item) => (
           <Item key={item._id} item={item}></Item>
         ))}

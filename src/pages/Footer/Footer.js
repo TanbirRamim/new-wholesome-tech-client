@@ -9,7 +9,7 @@ const Footer = () => {
   const today = new Date();
   const year = today.getFullYear();
   return (
-    <div className="bg-black p-5">
+    <div className="bg-black p-5 mt-5">
       <ul className="d-flex justify-content-center align-items-center  text-white  mx-3">
         <li>
           <a>

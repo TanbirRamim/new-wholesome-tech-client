@@ -12,7 +12,12 @@ const Header = () => {
     signOut(auth);
   };
   return (
-    <Navbar className="bg-black mb-2" variant="dark" bg="dark" expand="lg">
+    <Navbar
+      className="bg-black mb-2 d-flex justify-content-between"
+      variant="dark"
+      bg="dark"
+      expand="lg"
+    >
       <Container fluid>
         <Navbar.Brand as={Link} to="/">
           <h3>Wholesome Tech</h3>
