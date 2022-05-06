@@ -40,6 +40,9 @@ const Header = () => {
             <Nav.Link as={Link} to="dashboard">
               Dashboard
             </Nav.Link>
+            <Nav.Link as={Link} to="addItems">
+              Add Items
+            </Nav.Link>
             {user ? (
               <button
                 className="btn btn-link text-white text-decoration-none"

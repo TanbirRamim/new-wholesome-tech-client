@@ -8,7 +8,7 @@ const Items = () => {
 
   return (
     <div
-      className="  row justify-content-center
+      className=" m-2  row justify-content-center
      "
     >
       {items.map((item) => (

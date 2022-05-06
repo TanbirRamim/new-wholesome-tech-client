@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useCardDetails = (id) => {
   const [card, setCard] = useState({});
-  console.log(card);
+
   useEffect(() => {
     fetch(`http://localhost:5000/cardDetails/${id}`)
       .then((res) => res.json())

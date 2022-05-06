@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 // import { Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import Item from "../Item/Item";
 // import Cards from "../Cards/Cards";
 // import useCardDetails from "../useCardDetails/useCardDetails";
 

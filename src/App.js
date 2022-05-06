@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import NotFound from "./pages/NotFound/NotFound";
 import Login from "./pages/Authentication/Login/Login";
 import Register from "./pages/Authentication/Register/Register";
+import AddItems from "./pages/AddItems/AddItems";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/items" element={<Items></Items>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/addItems" element={<AddItems></AddItems>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
 
