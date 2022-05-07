@@ -1,33 +1,57 @@
 import React, { useEffect, useState } from "react";
-
-// import { Card } from "react-bootstrap";
+import { Button, Card, InputGroup } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import Item from "../Item/Item";
-// import Cards from "../Cards/Cards";
-// import useCardDetails from "../useCardDetails/useCardDetails";
+import useCardDetails from "../useCardDetails/useCardDetails";
+import "./CardDetails.css";
 
 const CardDetails = () => {
   const { id } = useParams();
-  const [card, setCard] = useState({});
+  const [card] = useCardDetails(id);
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/cardDetails/${id}`)
-      .then((res) => res.json())
-      .then((data) => setCard(data));
-  }, [id]);
-  // const [card] = useCardDetails(id);
-  // const cardId = card.id;
-  // console.log(cardId);
-  // console.log(card);
-  // card.filter(c=>c._id==id)
   return (
-    <div className="container">
-      <h2>id: {id}</h2>
-      <p>name: {card.item.name}</p>
-      {/* {
-        card.filter(card=> card.id==id
-      } */}
-    </div>
+    <Card className="bg-dark text-white container card-manage d-flex  align-items-center flex-sm-column flex-md-row flex-lg-row flex-xl-row flex-xxl-row">
+      <Card.Img className="img-pack " src={card.image} alt="Card image" />
+      <div className="p-2">
+        <Card.Title className="mt-2">{card.name}</Card.Title>
+        <br />
+        <Card.Text>{card.short_description}</Card.Text>
+        <Card.Text>
+          <h5>id: {id}</h5>
+        </Card.Text>
+        <Card.Text>
+          <h5> price: {card.price}</h5>
+        </Card.Text>
+        <Card.Text>
+          <h5>supplier: {card.supplier_name}</h5>
+        </Card.Text>
+        <Card.Text>
+          <h5>Quantity: {card.quantity}</h5>
+        </Card.Text>
+        <Card.Text>
+          <h5>Sold: {card.sold ? card.sold : "NO"}</h5>
+        </Card.Text>
+        <Button variant="outline-secondary">Delivered</Button>
+        <br />
+        <br />
+        <div className="input-group  mb-3">
+          <input
+            required
+            type="number"
+            className="form-control custom-input-size"
+            placeholder="Positive number only"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <button
+            className="btn btn-outline-secondary"
+            type="button"
+            id="button-addon2"
+          >
+            Restock
+          </button>
+        </div>
+      </div>
+    </Card>
   );
 };
 
