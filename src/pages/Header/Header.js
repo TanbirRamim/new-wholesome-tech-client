@@ -34,15 +34,20 @@ const Header = () => {
             <Nav.Link as={Link} to="blogs">
               Blogs
             </Nav.Link>
-            <Nav.Link as={Link} to="manageInventory">
-              Manage Inventory
-            </Nav.Link>
-            <Nav.Link as={Link} to="dashboard">
-              Dashboard
-            </Nav.Link>
-            <Nav.Link as={Link} to="addItems">
-              Add Items
-            </Nav.Link>
+
+            {user && (
+              <>
+                <Nav.Link as={Link} to="manageInventory">
+                  Manage Inventory
+                </Nav.Link>
+                <Nav.Link as={Link} to="addItems">
+                  Add Items
+                </Nav.Link>
+                <Nav.Link as={Link} to="myItems">
+                  My Items
+                </Nav.Link>
+              </>
+            )}
             {user ? (
               <button
                 className="btn btn-link text-white text-decoration-none"
