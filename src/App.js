@@ -46,7 +46,11 @@ function App() {
 
         <Route
           path="/cardDetails/:id"
-          element={<CardDetails></CardDetails>}
+          element={
+            <RequireAuth>
+              <CardDetails></CardDetails>
+            </RequireAuth>
+          }
         ></Route>
         <Route
           path="/manageInventory"

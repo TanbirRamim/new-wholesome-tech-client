@@ -19,7 +19,7 @@ const CardDetails = () => {
       name: card.name,
       quantity: quantity,
     };
-    const url = `http://localhost:5000/cardDetails/${id}`;
+    const url = `https://blooming-eyrie-86596.herokuapp.com/cardDetails/${id}`;
     console.log(url);
     fetch(url, {
       method: "PUT",

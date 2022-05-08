@@ -8,7 +8,7 @@ const ManageInventory = () => {
   const handleDelete = (id) => {
     const permission = window.confirm("You sure, you want to delete this?");
     if (permission) {
-      const url = `http://localhost:5000/cardDetails/${id}`;
+      const url = `https://blooming-eyrie-86596.herokuapp.com/cardDetails/${id}`;
       fetch(url, {
         method: "DELETE",
       })

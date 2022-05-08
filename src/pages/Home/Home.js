@@ -1,15 +1,21 @@
 import React from "react";
 import Item from "../Item/Item";
-import Items from "../Items/Items";
+import { Link } from "react-router-dom";
 import useItems from "../UseItems/UseItems";
 import Typewriter from "typewriter-effect";
 
 import Banner from "./banner.webp";
-import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Button, NavLink } from "react-bootstrap";
+import Loading from "../Authentication/Loading/Loading";
+import CountUpSection from "../CountUp/CountUpSection";
+import BarChartInfo from "../BarChart/BarChartInfo";
+import LineChartInfo from "../LineChartInfo/LineChartInfo";
 
 const Home = () => {
   const [items] = useItems();
+  if (items == 0) {
+    <Loading></Loading>;
+  }
   return (
     <div>
       <div className="m-5 d-flex align-items-center justify-content-evenly mx-auto">
@@ -55,8 +61,17 @@ const Home = () => {
           <Item key={item._id} item={item}></Item>
         ))}
       </div>
-      <div className="mt-4">
-        <Button variant="outline-dark"> Manage Inventories</Button>
+      <div className="mt-4 mb-5">
+        <NavLink to="/manageInventory">
+          <Button variant="outline-dark"> Manage Inventories</Button>
+        </NavLink>
+      </div>
+      <div className="container d-flex justify-evenly flex-sm-column flex-md-column flex-lg-row">
+        <BarChartInfo></BarChartInfo>
+        <LineChartInfo></LineChartInfo>
+      </div>
+      <div className="container">
+        <CountUpSection></CountUpSection>
       </div>
     </div>
   );

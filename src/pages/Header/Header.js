@@ -22,46 +22,48 @@ const Header = () => {
         <Navbar.Brand as={Link} to="/">
           <h3>Wholesome Tech</h3>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar-dark-example" />
-        <Navbar.Collapse id="navbar-dark-example">
-          <Nav>
-            <Nav.Link as={Link} to="home">
-              Home
-            </Nav.Link>
-            <Nav.Link as={Link} to="items">
-              Items
-            </Nav.Link>
-            <Nav.Link as={Link} to="blogs">
-              Blogs
-            </Nav.Link>
-
-            {user && (
-              <>
-                <Nav.Link as={Link} to="manageInventory">
-                  Manage Inventory
-                </Nav.Link>
-                <Nav.Link as={Link} to="addItems">
-                  Add Items
-                </Nav.Link>
-                <Nav.Link as={Link} to="myItems">
-                  My Items
-                </Nav.Link>
-              </>
-            )}
-            {user ? (
-              <button
-                className="btn btn-link text-white text-decoration-none"
-                onClick={handleSignOut}
-              >
-                Sign out
-              </button>
-            ) : (
-              <Nav.Link as={Link} to="login">
-                Login
+        <div className="p-2">
+          <Navbar.Toggle aria-controls="navbar-dark-example" />
+          <Navbar.Collapse id="navbar-dark-example">
+            <Nav>
+              <Nav.Link as={Link} to="home">
+                Home
               </Nav.Link>
-            )}
-          </Nav>
-        </Navbar.Collapse>
+              <Nav.Link as={Link} to="items">
+                Items
+              </Nav.Link>
+              <Nav.Link as={Link} to="blogs">
+                Blogs
+              </Nav.Link>
+
+              {user && (
+                <>
+                  <Nav.Link as={Link} to="manageInventory">
+                    Manage Inventory
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="addItems">
+                    Add Items
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="myItems">
+                    My Items
+                  </Nav.Link>
+                </>
+              )}
+              {user ? (
+                <button
+                  className="btn btn-link text-white text-decoration-none"
+                  onClick={handleSignOut}
+                >
+                  Sign out
+                </button>
+              ) : (
+                <Nav.Link as={Link} to="login">
+                  Login
+                </Nav.Link>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </div>
       </Container>
     </Navbar>
   );

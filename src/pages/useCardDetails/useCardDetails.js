@@ -4,7 +4,7 @@ const useCardDetails = (id) => {
   const [card, setCard] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cardDetails/${id}`)
+    fetch(`https://blooming-eyrie-86596.herokuapp.com/cardDetails/${id}`)
       .then((res) => res.json())
       .then((data) => setCard(data.item));
   }, [id]);

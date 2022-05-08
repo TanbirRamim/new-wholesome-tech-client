@@ -5,7 +5,7 @@ export default function App() {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    const url = `http://localhost:5000/product`;
+    const url = `https://blooming-eyrie-86596.herokuapp.com/product`;
     fetch(url, {
       method: "POST",
       headers: {
