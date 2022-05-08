@@ -5,6 +5,8 @@ import useItems from "../UseItems/UseItems";
 import Typewriter from "typewriter-effect";
 
 import Banner from "./banner.webp";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [items] = useItems();
@@ -52,6 +54,9 @@ const Home = () => {
         {items.slice(0, 6).map((item) => (
           <Item key={item._id} item={item}></Item>
         ))}
+      </div>
+      <div className="mt-4">
+        <Button variant="outline-dark"> Manage Inventories</Button>
       </div>
     </div>
   );
