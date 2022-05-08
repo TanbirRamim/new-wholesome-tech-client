@@ -1,12 +1,37 @@
-import React, { useEffect, useState } from "react";
-import { Button, Card, InputGroup } from "react-bootstrap";
+import React from "react";
+import { Button, Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import useCardDetails from "../useCardDetails/useCardDetails";
 import "./CardDetails.css";
 
 const CardDetails = () => {
   const { id } = useParams();
-  const [card] = useCardDetails(id);
+  const [card, setCard] = useCardDetails(id);
+  const handleDelivered = async () => {
+    let deliver = 1;
+    let quantityParse = parseInt(card.quantity);
+    let quantity = quantityParse - deliver;
+    const cardInfo = {
+      supplier: card.supplier_name,
+      price: card.price,
+      description: card.short_description,
+      image: card.image,
+      name: card.name,
+      quantity: quantity,
+    };
+    const url = `http://localhost:5000/cardDetails/${id}`;
+    console.log(url);
+    fetch(url, {
+      method: "PUT",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(cardInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setCard(cardInfo);
+      });
+  };
 
   return (
     <Card className="bg-dark text-white container card-manage d-flex  align-items-center flex-sm-column flex-md-row flex-lg-row flex-xl-row flex-xxl-row">
@@ -30,7 +55,9 @@ const CardDetails = () => {
         <Card.Text>
           <h5>Sold: {card.sold ? card.sold : "NO"}</h5>
         </Card.Text>
-        <Button variant="outline-secondary">Delivered</Button>
+        <Button onClick={handleDelivered} variant="outline-secondary">
+          Delivered
+        </Button>
         <br />
         <br />
         <div className="input-group  mb-3">

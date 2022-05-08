@@ -8,6 +8,6 @@ const useCardDetails = (id) => {
       .then((res) => res.json())
       .then((data) => setCard(data.item));
   }, [id]);
-  return [card];
+  return [card, setCard];
 };
 export default useCardDetails;
